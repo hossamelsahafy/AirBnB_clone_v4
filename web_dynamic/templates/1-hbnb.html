@@ -2,6 +2,8 @@
 <html lang="zxx">
   <head>
     <meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../static/scripts/1-hbnb.js?{{ cache_id }}"></script>
     <link
       rel="stylesheet"
       href="../static/styles/4-common.css?{{ cache_id }}"
@@ -37,7 +39,7 @@
       <section class="filters">
         <div class="locations">
           <h3>States</h3>
-          <h4>&nbsp;</h4>
+          <h4> </h4>
           <ul class="popover">
             {% for state in states|sort(attribute='name') %}
             <li>
@@ -53,10 +55,17 @@
         </div>
         <div class="amenities">
           <h3>Amenities</h3>
-          <h4>&nbsp;</h4>
+          <h4> </h4>
           <ul class="popover">
             {% for amty in amenities|sort(attribute='name') %}
-            <li>{{ amty.name }}</li>
+            <li>
+              <input
+                type="checkbox"
+                data-id="{{ amty.id }}"
+                data-name="{{ amty.name }}"
+              />
+              {{ amty.name }}
+            </li>
             {% endfor %}
           </ul>
         </div>
