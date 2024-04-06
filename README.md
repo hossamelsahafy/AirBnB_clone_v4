@@ -188,9 +188,3 @@ Second part of Airbnb: Joann Vuong
 ## License
 
 Public Domain. No copy write protection.
-
-## new update
-
-We added a method to the `BaseModel` called `update`. This allows you to change the attributes of an existing object by passing in key
-
-We added the `show` command to display an existing object in the database by its ID
