@@ -1,13 +1,11 @@
-#!/usr/bin/node
-$(document).ready(function () {
-    var amenities = {};
-    $('input[type="checkbox"]').change(function () {
-        if(this.checked) {
-            amenities[$(this).data('id')] = $(this).data('name');
+document.ready(function () {
+    const amenities = {};
+    $("li input[type=checkbox]").change(function () {
+        if (this.checked) {
+            amenities[this.dataset.name] = this.dataset.id;
         } else {
-            delete amenities[$(this).data('id')];
+            delete amenities[this.dataset.name];
         }
-        var amenitiesList = Object.values(amenities).join(', ');
-        $('.amenities h4').text('Amenities: ' + amenitiesList);
+        $(".amenities h4").text(Object.keys(amenities).sort().join(", "));
     });
 });
